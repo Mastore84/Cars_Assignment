@@ -19,8 +19,8 @@ class CarRepositoryTest {
     void setUp() {
         if(!isInitialized){
             carRepository.deleteAll();
-            carRepository.save(new Car("Toyota","Corolla"));
-            carRepository.save(new Car("C2","M2"));
+            carRepository.save(new Car("Toyota","Corolla", 50, 5));
+            carRepository.save(new Car("C2","M2", 50, 5));
             isInitialized = true;
         }
     }
@@ -43,6 +43,7 @@ class CarRepositoryTest {
         assertEquals("Toyota", c1.getCarName());
     }
 
+    @Test 
     public void findByModel(){
         Car c2 = carRepository.findByModel("Corolla");
         assertEquals("Corolla", c2.getModel());
