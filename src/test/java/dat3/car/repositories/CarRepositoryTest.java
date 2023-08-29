@@ -19,8 +19,8 @@ class CarRepositoryTest {
     void setUp() {
         if(!isInitialized){
             carRepository.deleteAll();
-            carRepository.save(new Car("Toyota","Corolla"));
-            carRepository.save(new Car("C2","M2"));
+            carRepository.save(new Car("Toyota","Corolla", 50, 5));
+            carRepository.save(new Car("C2","M2", 50, 5));
             isInitialized = true;
         }
     }

@@ -4,34 +4,24 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
 
 @Entity
-public class Car {
+public class Car extends AdminDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    private int id;
     @Column(name = "car_brand", length = 50, nullable = false)
-    String carName;
+    private String carName;
     @Column(name = "car_model", length = 60, nullable = false)
-    String model;
+    private String model;
     @Column(name = "rental_price_day")
-    double pricePrDay;
+    private double pricePrDay;
     @Column(name = "max_discount")
-    int bestDiscount;
-
-    @CreationTimestamp
-    private LocalDateTime createDateTime;
-
-    @UpdateTimestamp
-    private LocalDateTime updateDateTime;
+    private int bestDiscount;
 
     public Car(String carName, String model, double pricePrDay, int bestDiscount){
         this.carName = carName;
