@@ -43,6 +43,7 @@ class CarRepositoryTest {
         assertEquals("Toyota", c1.getCarName());
     }
 
+    @Test 
     public void findByModel(){
         Car c2 = carRepository.findByModel("Corolla");
         assertEquals("Corolla", c2.getModel());
